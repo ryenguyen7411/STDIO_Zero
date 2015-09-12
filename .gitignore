@@ -25,6 +25,7 @@ Visual Studio / MonoDevelop generated
 *.user
 *.unityproj
 *.booproj
+.vs/
 
 ============
 OS generated

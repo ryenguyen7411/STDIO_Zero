@@ -1,0 +1,297 @@
+fileFormatVersion: 2
+guid: 602023eeb8e21d94d9289bcd15048c3a
+timeCreated: 1441175177
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: spr_btn_facebook
+    21300002: spr_btn_facebook_press
+    21300004: spr_btn_info
+    21300006: spr_btn_info_press
+    21300008: spr_btn_play
+    21300010: spr_btn_play_press
+    21300012: spr_btn_right
+    21300014: spr_btn_right_press
+    21300016: spr_btn_wrong
+    21300018: spr_btn_wrong_press
+    21300020: spr_clock
+    21300022: spr_game_board
+    21300024: spr_logo_stdio
+    21300026: spr_operator_equal
+    21300028: spr_operator_greater
+    21300030: spr_operator_less
+    21300032: spr_popup
+    21300034: spr_suit_club
+    21300036: spr_suit_diamond
+    21300038: spr_suit_heart
+    21300040: spr_suit_spade
+    21300042: spr_zero_title
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 4096
+  textureSettings:
+    filterMode: -1
+    aniso: -1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: spr_btn_facebook
+      rect:
+        serializedVersion: 2
+        x: 1031
+        y: 30
+        width: 147
+        height: 148
+      alignment: 9
+      pivot: {x: .496598631, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: spr_btn_facebook_press
+      rect:
+        serializedVersion: 2
+        x: 981
+        y: 516
+        width: 147
+        height: 148
+      alignment: 9
+      pivot: {x: .496598631, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: spr_btn_info
+      rect:
+        serializedVersion: 2
+        x: 881
+        y: 29
+        width: 148
+        height: 149
+      alignment: 9
+      pivot: {x: .493243247, y: .503355682}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: spr_btn_info_press
+      rect:
+        serializedVersion: 2
+        x: 981
+        y: 321
+        width: 148
+        height: 149
+      alignment: 9
+      pivot: {x: .493243247, y: .503355682}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: spr_btn_play
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 174
+        width: 484
+        height: 490
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: spr_btn_play_press
+      rect:
+        serializedVersion: 2
+        x: 488
+        y: 180
+        width: 491
+        height: 484
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: spr_btn_right
+      rect:
+        serializedVersion: 2
+        x: 1690
+        y: 703
+        width: 329
+        height: 229
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: spr_btn_right_press
+      rect:
+        serializedVersion: 2
+        x: 1690
+        y: 472
+        width: 329
+        height: 229
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: spr_btn_wrong
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 695
+        width: 329
+        height: 229
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: spr_btn_wrong_press
+      rect:
+        serializedVersion: 2
+        x: 333
+        y: 695
+        width: 329
+        height: 229
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: spr_clock
+      rect:
+        serializedVersion: 2
+        x: 729
+        y: 28
+        width: 150
+        height: 150
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: spr_game_board
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 926
+        width: 924
+        height: 1120
+      alignment: 9
+      pivot: {x: .500541151, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: spr_logo_stdio
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 8
+        width: 618
+        height: 164
+      alignment: 9
+      pivot: {x: .499190927, y: .496951222}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: spr_operator_equal
+      rect:
+        serializedVersion: 2
+        x: 664
+        y: 798
+        width: 180
+        height: 126
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: spr_operator_greater
+      rect:
+        serializedVersion: 2
+        x: 1943
+        y: 1739
+        width: 101
+        height: 168
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: spr_operator_less
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 2
+        width: 105
+        height: 170
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: spr_popup
+      rect:
+        serializedVersion: 2
+        x: 928
+        y: 934
+        width: 1013
+        height: 1112
+      alignment: 9
+      pivot: {x: .495557755, y: .507643878}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: spr_suit_club
+      rect:
+        serializedVersion: 2
+        x: 981
+        y: 180
+        width: 131
+        height: 139
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: spr_suit_diamond
+      rect:
+        serializedVersion: 2
+        x: 1943
+        y: 1596
+        width: 98
+        height: 141
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: spr_suit_heart
+      rect:
+        serializedVersion: 2
+        x: 1130
+        y: 523
+        width: 117
+        height: 141
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: spr_suit_spade
+      rect:
+        serializedVersion: 2
+        x: 1943
+        y: 1909
+        width: 103
+        height: 137
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: spr_zero_title
+      rect:
+        serializedVersion: 2
+        x: 928
+        y: 666
+        width: 760
+        height: 266
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
