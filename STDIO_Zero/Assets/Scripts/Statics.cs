@@ -9,12 +9,13 @@ namespace Stdio
 			if (Debug.isDebugBuild)
 				Debug.Log(message);
 		}
+
+		public static int s_score;
 	}
-	
-	public enum Effect
+
+	public enum GameState
 	{
-		EFFECT_FLASH,
-		EFFECT_ROTATE,
-		EFFECT_NONE
+		PLAYING,
+		FAILED
 	}
 }

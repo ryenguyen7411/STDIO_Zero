@@ -12,14 +12,20 @@ public class ButtonManager : MonoBehaviour
 			if (manager.IsRightAnswer())
 				manager.GenerateNextCalculation();
 			else
+			{
 				Static.S_Debug("You're wrong!");
+				manager.m_gameState = GameState.FAILED;
+			}
 		}
 		else
 		{
 			if (!manager.IsRightAnswer())
 				manager.GenerateNextCalculation();
 			else
+			{
 				Static.S_Debug("You're wrong!");
+				manager.m_gameState = GameState.FAILED;
+			}
 		}
 	}
 }
