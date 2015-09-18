@@ -22,7 +22,12 @@ public class GameManager : MonoBehaviour
 	private float			m_levelTime;
 	public	Image			m_progressTimer;
 
-	public	GameState		m_gameState;
+	[HideInInspector]
+	public GameState		m_gameState;
+
+	public Canvas			m_gameOverPopup;
+	public Text				m_popupScore;
+	public Text				m_popupBestScore;
 
 	/* Initialize */
 	void Start()
@@ -38,10 +43,10 @@ public class GameManager : MonoBehaviour
 
 		m_calculation = new int[3];
 
+		m_gameState = GameState.PLAYING;
+
 		m_levelTime = 1.5f;
 		m_currentTime = 0f;
-
-		m_gameState = GameState.PLAYING;
 
 		Static.s_score = -1;
 		GenerateNextCalculation();
@@ -52,45 +57,41 @@ public class GameManager : MonoBehaviour
 	{
 		switch(m_gameState)
 		{
-			case GameState.PLAYING:
-				m_currentTime += Time.deltaTime;
-				if (m_currentTime >= m_levelTime)
-					m_currentTime = 0f;
-
-				m_progressTimer.fillAmount = m_currentTime / m_levelTime;
-
+		case GameState.PLAYING:
+			m_currentTime += Time.deltaTime;
+			if (m_currentTime >= m_levelTime)
+				ShowGameOverPopup();
+			
+			m_progressTimer.fillAmount = m_currentTime / m_levelTime;
+			
 #if UNITY_EDITOR
+			{
+				if (Input.GetKeyDown(KeyCode.LeftArrow))
 				{
-					if (Input.GetKeyDown(KeyCode.LeftArrow))
+					if (IsRightAnswer())
+						GenerateNextCalculation();
+					else
 					{
-						if (IsRightAnswer())
-							GenerateNextCalculation();
-						else
-						{
-							Static.S_Debug("You're wrong!");
-							m_gameState = GameState.FAILED;
-						}
-					}
-					else if (Input.GetKeyDown(KeyCode.RightArrow))
-					{
-						if (!IsRightAnswer())
-							GenerateNextCalculation();
-						else
-						{
-							Static.S_Debug("You're wrong!");
-							m_gameState = GameState.FAILED;
-						}
+						Static.S_Debug("You're wrong!");
+						ShowGameOverPopup();
 					}
 				}
-#endif
-				break;
-
-			case GameState.FAILED:
-				if (Input.GetKeyDown(KeyCode.Space))
-					m_gameState = GameState.PLAYING;
-				break;
+				else if (Input.GetKeyDown(KeyCode.RightArrow))
+				{
+					if (!IsRightAnswer())
+						GenerateNextCalculation();
+					else
+					{
+						Static.S_Debug("You're wrong!");
+						ShowGameOverPopup();
+					}
+				}
+			}
+#endif		
+			break;
+		case GameState.FAILED:
+			break;
 		}
-		
 	}
 
 	public void GenerateNextCalculation()
@@ -181,5 +182,18 @@ public class GameManager : MonoBehaviour
 				(m_calculation[2] == 0 && m_calculation[0] == m_calculation[1]) ||
 				(m_calculation[2] == 1 && m_calculation[0] > m_calculation[1]) ||
 				(m_calculation[2] == 2 && m_calculation[0] < m_calculation[1]);
+	}
+
+	public void ShowGameOverPopup()
+	{
+		m_gameOverPopup.enabled = true;
+		
+		m_gameState = GameState.FAILED;
+		m_popupScore.text = Static.s_score.ToString();
+
+		if(PlayerPrefs.GetInt("BestScore") < Static.s_score)
+			PlayerPrefs.SetInt("BestScore", Static.s_score);
+
+		m_popupBestScore.text = PlayerPrefs.GetInt("BestScore").ToString();
 	}
 }

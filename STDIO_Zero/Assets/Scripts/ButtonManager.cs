@@ -7,25 +7,38 @@ public class ButtonManager : MonoBehaviour
 	{
 		GameManager manager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
 
-		if(gameObject.name == "BtnRight")
+		if(manager.m_gameState == GameState.PLAYING)
 		{
-			if (manager.IsRightAnswer())
-				manager.GenerateNextCalculation();
+			if(gameObject.name == "BtnRight")
+			{
+				if (manager.IsRightAnswer())
+					manager.GenerateNextCalculation();
+				else
+				{
+					Static.S_Debug("You're wrong!");
+					manager.ShowGameOverPopup();
+				}
+			}
 			else
 			{
-				Static.S_Debug("You're wrong!");
-				manager.m_gameState = GameState.FAILED;
+				if (!manager.IsRightAnswer())
+					manager.GenerateNextCalculation();
+				else
+				{
+					Static.S_Debug("You're wrong!");
+					manager.ShowGameOverPopup();
+				}
 			}
 		}
-		else
-		{
-			if (!manager.IsRightAnswer())
-				manager.GenerateNextCalculation();
-			else
-			{
-				Static.S_Debug("You're wrong!");
-				manager.m_gameState = GameState.FAILED;
-			}
-		}
+	}
+
+	public void ChangeToMenuScene()
+	{
+		Application.LoadLevel("MenuScene");
+	}
+
+	public void ChangeToGameScene()
+	{
+		Application.LoadLevel("GameScene");
 	}
 }
