@@ -29,6 +29,10 @@ public class GameManager : MonoBehaviour
 	public Text				m_popupScore;
 	public Text				m_popupBestScore;
 
+	private AudioClip		m_sfxAnswerRight;
+	private AudioClip		m_sfxAnswerWrong;
+	private AudioSource		m_audioController;
+
 	/* Initialize */
 	void Start()
 	{
@@ -40,6 +44,10 @@ public class GameManager : MonoBehaviour
 			m_lefts[i] = m_leftContainer.transform.GetChild(i).gameObject;
 			m_rights[i] = m_rightContainer.transform.GetChild(i).gameObject;
 		}
+
+		m_sfxAnswerRight = Resources.Load<AudioClip>("Audios/sfx_answer_right");
+		m_sfxAnswerWrong = Resources.Load<AudioClip>("Audios/sfx_answer_wrong");
+		m_audioController = GetComponent<AudioSource>();
 
 		m_calculation = new int[3];
 
@@ -109,6 +117,11 @@ public class GameManager : MonoBehaviour
 		m_scoreText.text = Static.s_score.ToString();
 
 		m_currentTime = 0f;
+
+		m_audioController.clip = m_sfxAnswerRight;
+		m_audioController.Play();
+
+		Debug.Log(m_calculation[0].ToString() + m_calculation[1].ToString() + m_calculation[2].ToString());
 	}
 
 	internal void GetSuitsPosition(GameObject[] _suits, int _count)
@@ -186,6 +199,9 @@ public class GameManager : MonoBehaviour
 
 	public void ShowGameOverPopup()
 	{
+		m_audioController.clip = m_sfxAnswerWrong;
+		m_audioController.Play();
+
 		m_gameOverPopup.enabled = true;
 		
 		m_gameState = GameState.FAILED;
